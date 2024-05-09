@@ -1,6 +1,6 @@
 from art import logo
-import math
 import random
+import os
 
 print(logo)
 print("Welcome to the highest bidder program")
@@ -14,7 +14,7 @@ def collect_bid(bidder_names, bidder_amount):
     print (bidder_dictionary)
     highest_bid_list.append(bidder_amount)
     
-    
+   
 def bid_result(dictionary, value):
     for key, val in dictionary.items():
         if val == value:
@@ -23,7 +23,12 @@ def bid_result(dictionary, value):
     # If value not found, return None
     return None
 
+# Call the function to clear the screen
+def clear_screen():
+    os.system('clear')
 
+
+#To keep the program running until user enters 'restart' options
 end_program = False
 while not end_program:
     bidder_names = input("Enter bidder name: ")
@@ -33,8 +38,9 @@ while not end_program:
 
     restart = input("Continue program 'Yes' or 'No'").lower()
 
-    #To keep the program running until user enters 'restart' options
+    
     if restart == 'yes':
+        clear_screen()
         continue
 
     elif restart =='no':
